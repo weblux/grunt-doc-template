@@ -1,0 +1,165 @@
+body > .page {
+  display: table;
+  height: 100vh;
+}
+
+.page-header {
+  display: table-cell;
+  min-width: 20rem;
+  z-index: 1;
+  position: relative;
+
+  &:after {
+    background: #081E29;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .no-js & {
+    border: 1px solid #081e29;
+    min-width: 25rem;
+  }
+}
+
+.page-logo {
+  box-sizing: border-box;
+  position: fixed;
+  top: 4.7rem;
+  width: 20rem;
+
+  .no-js & {
+    position: static;
+  }
+}
+
+.page-body {
+  box-sizing: border-box;
+  display: table-cell;
+  padding: 5rem 0 0;
+  width: 100%;
+}
+
+.page-cover {
+  margin: -5rem 0 5rem;
+}
+
+.page-main,
+.page-copyright {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: @maxPageWidth;
+}
+
+.page-copyright {
+  padding: @baseline @gutter;
+}
+
+.page-header > .anchor {
+  box-shadow: none;
+  bottom: auto;
+  top: 50%;
+  right: auto;
+  left: 10rem;
+  margin: -2.7rem 0 0 -2.7rem;
+}
+
+.page-headernav {
+  background: url('../img/css/skizz-logo-nav-bg.png') no-repeat right bottom #13303b;
+  padding: 6.2rem 10rem 1.5rem;
+  z-index: -1;
+
+  &.is-active {
+    left: 20rem;
+  }
+
+  .no-js & {
+    background: none;
+    position: static;
+    z-index: auto;
+  }
+
+  .search {
+    margin-bottom: @baseline * 5;
+  }
+
+  .nav-section--secondary,
+  .nav-section--support,
+  .nav--primary {
+    max-width: 315px;
+  }
+
+  .nav-section--support {
+    margin-top: @baseline * 5;
+  }
+}
+
+.js .page-headernav .nav-section--primary {
+  position: relative;
+}
+
+.js .page-headernav .nav--primary {
+  .nav-item--has-subnav {
+    .clear;
+    position: static;
+    clear: both;
+    padding-right: 0;
+
+    & > a:first-child {
+      box-sizing: border-box;
+      float: left;
+      width: 100%;
+      margin-right: -6.4rem;
+    }
+  }
+
+  .subnav-anchor {
+    float: right;
+    position: static;
+  }
+
+  ul {
+    box-sizing: border-box;
+    column-count: 2;
+    column-gap: @gutter;
+    display: block;
+    position: absolute;
+    left: 340px;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+
+    &.is-active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    a {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+
+.no-js .nav--primary {
+  margin: 0 -@gutter;
+}
+
+.no-js .search {
+  input {
+    padding: 0.5rem 9rem 0.5rem 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem;
+  }
+}
