@@ -1,0 +1,171 @@
+.filters {
+  margin-bottom: 2rem;
+
+  & > summary,
+  & > h3 {
+    background: @neutralDark;
+    color: #fff;
+    font: inherit;
+    margin: 0;
+    padding: @gutter;
+  }
+
+  & > summary {
+    position: relative;
+
+    &:focus { outline: 1px dotted #ccc; }
+
+    &::-webkit-details-marker { display: none; }
+    &::after {
+      box-sizing: border-box;
+      content: '+';
+      height: 2em;
+      line-height: 1;
+      padding: 4px 6px;
+      position: absolute;
+      right: @gutter;
+      text-align: center;
+      top: @gutter;
+      width: 2em;
+    }
+  }
+
+  &[open] > summary {
+    &::after {
+      content: '-';
+    }
+  }
+}
+
+.filter {
+  position: relative;
+
+  &[open] summary {
+    background: @neutral1;
+    color: #fff;
+
+    &:after {
+      content: '-';
+    }
+  }
+
+  & + & {
+    border-top: 1px solid @neutral2;
+  }
+
+  summary {
+    background: @neutral3;
+    font-size: 1em;
+    overflow: hidden;
+    padding: (@baseline / 2) 1em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:after {
+      content: '+';
+      position: absolute;
+      right: 3rem;
+    }
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.filter-content {
+  padding: @baseline 1em;
+
+  a {
+    display: block;
+    padding: (@baseline / 4) 1em;
+  }
+
+  fieldset {
+    margin-top: 0;
+  }
+}
+
+.filter--parallel {
+  .blocklink {
+    padding-left: 1.5em;
+    position: relative;
+
+    &:before,
+    &:after {
+      box-sizing: border-box;
+      color: @neutral2;
+      display: block;
+      height: 1em;
+      left: 0;
+      position: absolute;
+      top: .55em;
+      width: 1em;
+    }
+
+    &:before {
+      content: '';
+      border: 1px solid @neutral2;
+    }
+
+    &:hover,
+    &:focus,
+    &.is-active {
+      &:after {
+        content: '\2713';
+        line-height: 1;
+        text-align: center;
+      }
+    }
+
+    &.is-active {
+      &:after {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.filter--orthogonal {
+  &:extend(.filter--parallel all);
+
+  .blocklink {
+    &:before {
+      border-radius: 100%;
+    }
+
+    &:hover,
+    &:focus,
+    &.is-active {
+      &:after {
+        background: @neutral2;
+        border-radius: 100%;
+        border: 0.2rem solid transparent;
+        content: '';
+      }
+    }
+  }
+}
+
+.filter--drilldown {
+  ul {
+    padding-left: (@gutter / 2);
+  }
+}
+
+@media (min-width: @breakpointLap) {
+  .filter {
+    padding: 0 (@gutter / 2);
+
+    summary {
+      margin: 0 -(@gutter / 2);
+      padding: (@baseline / 2) (@gutter / 2);
+    }
+  }
+}
+
+@media (min-width: @breakpointDesk) {
+  .filter-content {
+    margin: 0 -1em;
+  }
+}

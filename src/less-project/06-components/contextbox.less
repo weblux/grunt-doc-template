@@ -1,0 +1,36 @@
+.contextbox {
+  background: #dfeff9;
+  color: @color3;
+  box-sizing: border-box;
+  padding: @baseline @gutter;
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 32em) {
+  .contextbox--left {
+    float: left;
+    margin: 0 @gutter @baseline 0;
+    max-width: 25%;
+  }
+
+  .contextbox--right {
+    float: right;
+    margin: 0 0 @baseline @gutter;
+    max-width: 25%;
+  }
+}
+
+@media (min-width: @breakpointDesk) {
+  .contextbox--left {
+    // margin: 0 @gutter @baseline -@gutter;
+    max-width: 33.33%;
+  }
+
+  .contextbox--right {
+    // margin: 0 -@gutter @baseline @gutter;
+    max-width: 33.33%;
+  }
+}

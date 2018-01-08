@@ -1,0 +1,226 @@
+/*** GLOSSARY NAV ***/
+
+@glossaryNavLinkBackground: @color2;
+@glossaryNavLinkBackgroundHover: @color2Darker;
+@glossaryNavLinkBackgroundActive: @color3Darkest;
+@glossaryNavLinkColor: #fff;
+
+@glossaryNavSpanBackground: #fff;
+@glossaryNavSpanColor: @neutral1;
+@glossaryNavBorderColor: @neutral2;
+
+
+.page--glossaire .page-content {
+  position: relative;
+}
+
+.no-flexwrap .page--glossaire .page-text {
+  margin-left: 0;
+}
+
+.word-glossary {
+  border: 1px solid transparent;
+  background: #E9EAED;
+  color: #000000;
+  text-decoration: none;
+  line-height: 2.6rem;
+  font-style: italic;
+  font-family: @bodyFontFamily;
+  font-weight: 400;
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    border-color: #686C6D;
+    color: #fff;
+    background:  #686C6D;
+    text-decoration: none;
+  }
+}
+
+.messenger.messenger--glossary {
+  background: #f2fdff;
+  border: 1px solid #d1eefa;
+  box-shadow: none;
+  padding: 2rem;
+
+  .messenger-title {
+    color: #1b7ca8;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+  }
+
+  .messenger-content {
+    font-size: 1.4rem;
+    color: #114e6a;
+  }
+
+  .messenger-actions a { font-size: 1.4rem; }
+
+  &.messenger--hide { display: none; }
+
+  .messenger-actions span { .at; }
+}
+
+// glossary nav anchors
+.glossary-nav {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-height: 100vh;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  li {
+    list-style-type: none;
+  }
+
+  &.is-active {
+    background: rgba(0, 0, 0, 0.05);
+    position: fixed;
+  }
+
+  &.is-passed {
+    background: none;
+  }
+
+  .glossary-nav-item {
+    float: left;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    width: auto;
+    min-height: 3.7vh;
+    line-height: 1;
+
+    &:before { display: none; }
+
+    a,
+    span {
+      color: @glossaryNavLinkBackground;
+      display: block;
+      font-size: 1.3rem;
+      font-weight: 600;
+      padding: 0;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    a:hover,
+    a:focus,
+    a:active { color: @neutralDark; }
+
+    span {
+      opacity: 0.5;
+    }
+  }
+
+  .glossary-nav-item--nolink {
+    display: none;
+  }
+}
+
+
+@media(min-width: @breakpointLap) {
+  /* glossary nav anchors */
+  .page--glossaire .page-secondary {
+    flex: 3 0%;
+  }
+
+  .glossary-nav {
+    display: block;
+    min-height: auto;
+    right: auto;
+    width: 20rem;
+    max-height: auto;
+    bottom: auto;
+    top: 0;
+    right: 0;
+
+    &.is-active {
+      background: none;
+      top: 0;
+      right: 0;
+    }
+
+    .glossary-nav-item {
+      display: inline-block;
+      float: none;
+      box-sizing: border-box;
+			height: inherit;
+      margin: 0.5rem;
+
+      a,
+      span {
+        background-color: @glossaryNavLinkBackground;
+        color: #fff;
+        display: block;
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 1.65;
+        height: 50px;
+        width: 50px;
+        margin-bottom: 0;
+      }
+
+			a:hover,
+			a:focus {
+        background-color: @glossaryNavLinkBackgroundHover;
+        color: #fff;
+			}
+
+			a:active {
+				background-color: @glossaryNavLinkBackgroundActive;
+				color: #fff;
+			}
+
+      span {
+        background: #fff;
+        border: 1px solid @neutral2;
+        box-sizing: border-box;
+        color: @neutral1;
+      }
+    }
+
+    .glossary-nav-item--nolink {
+      display: inline-block;
+    }
+  }
+}
+
+@media(min-width: @breakpointDesk) {
+  .messenger.messenger--glossary {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    bottom: auto;
+    left: auto;
+    width: 50%;
+    max-width: 480px;
+    transform: translate(0, -50%);
+    transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+    display: block;
+
+    &.messenger--hide {
+      display: block;
+      transform: translate(100%, -50%);
+    }
+  }
+
+  .glossary-nav {
+    right: auto;
+    &.is-active {
+      right: auto;
+    }
+  }
+}

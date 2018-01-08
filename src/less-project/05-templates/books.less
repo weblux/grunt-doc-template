@@ -1,0 +1,198 @@
+.book {
+  background: @neutral3;
+  margin: 0 0 @baseline;
+  overflow: hidden;
+  padding: @baseline 1em;
+
+  > .book-cover {
+    float: left;
+    margin: 0 1em 1em 0;
+    max-width: 32%;
+  }
+
+  .btn {
+    clear: both;
+  }
+}
+
+.book-header {
+  margin: 0 0 (@baseline / 2);
+}
+
+.book-title {
+  margin-top: 0;
+}
+
+.book-author {
+  color: @neutral1;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.4;
+
+  b {
+    color: @textColor;
+    font-style: normal;
+  }
+}
+
+.book-metas {
+  font-family: @navigationFontFamily;
+  margin: @baseline 0;
+
+  dt {
+    font-size: 1.2rem;
+  }
+
+  dd {
+    margin: 0 0 (@baseline / 2);
+  }
+}
+
+.book-description {
+  margin-top: @baseline;
+}
+
+.book-order {
+  margin: @baseline 0;
+
+  .book-file-metas {
+    margin-top: 0;
+  }
+}
+
+.book-actions {
+  display: flex;
+
+  margin: (@baseline / 2) 0 0;
+  padding-bottom: 1px;
+
+  * + * {
+    margin-left: .5em;
+  }
+
+  @media (max-width: 500px) {
+    * + * {
+      margin-top: .5em;
+      margin-left: 0;
+    }
+
+    flex-direction: column;
+  }
+}
+
+.book-files {
+  p {
+    border-top: 4px solid @textColor;
+    padding-top: (@baseline / 2);
+  }
+}
+
+.book-file {
+  padding: @baseline 1em;
+
+  & + & {
+    margin-top: @baseline;
+  }
+
+  h3 {
+    color: @linkBaseColor;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .meta {
+    font-size: 1.2rem;
+  }
+
+  img {
+    float: left;
+    margin: 0 1em 1em 0;
+    max-width: 32%;
+  }
+}
+
+.book-translation {
+  clear: left;
+  overflow: hidden;
+}
+
+.book-file--main {
+  background: @neutral3;
+  padding: (@baseline / 2);
+}
+
+.book-file-details {
+  .book-title {
+    font-weight: bold;
+    margin-bottom: @baseline;
+  }
+}
+
+.book-translations {
+  display: flex;
+  flex-direction: column;
+  font-size: .8em;
+
+  .book-file {
+    flex: 0 0 auto;
+    margin: @baseline 0;
+  }
+}
+
+@media (min-width: 32.5em) {
+  .book-file {
+    display: table;
+    display: flex;
+  }
+
+  .book-file img,
+  .book-file-details {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .book-file img {
+    max-width: 180px;
+    padding-right: @gutter;
+  }
+}
+
+@media (min-width: @breakpointLap) {
+  .books .book {
+    box-sizing: border-box;
+    padding: (@baseline / 2);
+  }
+}
+
+@media (min-width: @breakpointDesk) {
+  .books .book {
+    flex: 0 0 25%;
+  }
+
+  .book-order .book-file {
+    padding: 0;
+  }
+
+  .book-translations {
+    flex-flow: row wrap;
+
+    .book-file {
+      flex: 0 0 47%;
+    }
+  }
+
+  .book-metas {
+    dt,dd {
+      display: inline-block;
+    }
+
+    dt:after {
+      content: ':';
+      padding-left: 0.3rem;
+    }
+
+    dd + dt {
+      padding-left: 1rem;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+/*****************************************************/
+/*****************   AFFIXED   ***********************/
+/*****************************************************/
+
+.croupier-wrapper {
+  position: relative;
+}
+
+.croupier-fixedtablewrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+
+  .croupier-hide {
+    visibility: hidden;
+  }
+
+  th, td {
+    background: #f8f8f8;
+  }
+}
+
+.croupier-tablewrapper {
+  overflow-x: auto;
+}
+
+.croupier-search {
+  margin: 0;
+}
+
+/*****************************************************/
+/*******************   SELECT   **********************/
+/*****************************************************/
+
+.table--select tbody{
+  tr {
+    cursor: pointer;
+  }
+  tr.is-hovered {
+    background: #f5f5f5;
+  }
+  tr.is-selected {
+    background: #ffd;
+  }
+}
+
+.table--select {
+  th,
+  td {
+    &:first-child {
+      min-width: 0;
+    }
+  }
+}
+
+/*****************************************************/
+/********************   SORT   ***********************/
+/*****************************************************/
+
+.table--sort th {
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.sortable {
+  background: #6F6F79;
+  color: #fff;
+
+  &::after {
+    content: '↕';
+    margin-left: .5em;
+    opacity: .5;
+  }
+
+  &.sorted {
+    background: #de5e00;
+    color: #fff;
+  }
+
+  &:hover,
+  &:focus,
+  &.sorted {
+    background: #424251;
+    color: #fff;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &.sorted_asc::after {
+    content: '↓';
+  }
+
+  &.sorted_desc::after {
+    content: '↑';
+  }
+}
+
+.sorted {
+  background: #F0F0F1;
+}

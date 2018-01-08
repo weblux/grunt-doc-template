@@ -1,0 +1,56 @@
+.feed--facebook {
+  .feed-item {
+    margin: 0;
+    max-width: 300px;
+    padding: @baseline 0;
+
+    & + .feed-item {
+      border-top: 1px solid @neutral2;
+    }
+  }
+
+  .feed-item-header {
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    margin-bottom: @baseline;
+    overflow: hidden;
+  }
+
+  .feed-item-author-img {
+    display: block;
+    border: 1px solid @neutral2;
+    float: left;
+    margin-right: -4rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .feed-item-infos {
+    box-sizing: border-box;
+    display: block;
+    padding-left: 5rem;
+    width: 100%;
+  }
+
+  .feed-item-author {
+    color: #1D2129;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: block;
+    margin: 0.5rem 0 0 0;
+  }
+
+  .feed-item-timing {
+    color: @neutral1;
+    display: block;
+    font-size: 1.1rem;
+  }
+
+  .feed-item-content {
+    font-size: 1.4rem;
+  }
+
+  .feed-item-content *:last-child {
+    margin-bottom: 0;
+  }
+}

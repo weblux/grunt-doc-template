@@ -1,0 +1,73 @@
+.feed--twitter {
+  .feed-item {
+    margin: 0;
+    max-width: 300px;
+    padding: @baseline 0;
+
+    & + .feed-item {
+      border-top: 1px solid @neutral2;
+    }
+  }
+
+  .feed-item-header {
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    margin-bottom: @baseline;
+    overflow: hidden;
+  }
+
+  .feed-item-status {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: (@baseline / 2);
+
+    &.feed-item-status--retweet:before {
+      background: url('../../lab/common/assets/img/feed-twitter-retweet.png') no-repeat 0 0 transparent;
+      content: "";
+      display: inline-block;
+      height: 12px;
+      margin-right: (@gutter / 4);
+      vertical-align: middle;
+      width: 12px;
+    }
+  }
+
+  .feed-item-author-img {
+    display: block;
+    border-radius: 100%;
+    float: left;
+    margin-right: -4rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .feed-item-infos {
+    box-sizing: border-box;
+    display: block;
+    padding-left: 5rem;
+    width: 100%;
+  }
+
+  .feed-item-author {
+    color: @textColor;
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: block;
+    margin: 0;
+  }
+
+  .feed-item-name,
+  .feed-item-timing {
+    color: @textColor;
+    display: inline-block;
+    font-size: 1.6rem;
+  }
+
+  .feed-item-content {
+    font-size: 1.4rem;
+  }
+
+  .feed-item-content *:last-child {
+    margin-bottom: 0;
+  }
+}

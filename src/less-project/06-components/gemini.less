@@ -1,0 +1,55 @@
+.tabpanels .gemini-tabs {
+  display: none;
+}
+
+@media (min-width: 45em) {
+  .tabpanels {
+    margin: (@baseline * 2) 0;
+  }
+
+  .gemini-tabpanel {
+    display: none;
+    outline: none;
+    padding: @baseline @gutter;
+    border-top: 5px solid @color2;
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  .gemini-tabpanel--active {
+    display: block;
+  }
+
+  .tabpanels .gemini-tabs {
+    display: block;
+    display: flex;
+    padding: 0;
+
+    li {
+      hyphens: none;
+      position: relative;
+      margin-bottom: 0;
+
+      & + li {
+        margin-left: 2px;
+      }
+    }
+
+    a {
+      background: @color1Lightest;
+      border: none;
+      box-sizing: border-box;
+      padding: @baseline @gutter;
+      height: 100%;
+    }
+
+    .is-active a,
+    a:hover,
+    a:focus {
+      background: @color2;
+      color: #fff;
+    }
+  }
+}

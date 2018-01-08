@@ -1,0 +1,79 @@
+.glossary-index {
+  overflow: hidden;
+  padding: @baseline @gutter (@baseline * 2.5) 0;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.glossary-letter {
+  color: @color2;
+  display: inline-block;
+  float: left;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0 -(4rem + (@gutter / 2)) 0 0;
+  min-width: 4rem;
+  padding-right: (@gutter / 2);
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.glossary-list {
+	border-left: 1px solid @neutral2;
+  display: block;
+	margin: 0 0 0 (4rem + (@gutter / 2));
+  min-height: 6rem;
+  hyphens: none;
+
+  li {
+    list-style: none;
+    margin-left: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+}
+
+.glossary-list li + li {
+  margin-top: (@baseline / 2);
+}
+
+.glossary-list li a {
+	color: @textColor;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+@media(min-width: @breakpointLap) {
+  .glossary {
+    // As glossary-nav is in absolute, if there is few content, the glossary-nav
+    // enter in collition with the next element (usually the footer)
+    min-height: 55rem;
+  }
+
+  .glossary-letter {
+    font-size: 5rem;
+    min-width: 9rem;
+    margin: 0 -(9rem + @gutter) 0 0;
+    padding-right: @gutter;
+  }
+
+  .glossary-list {
+	  margin: 0 0 0 (9rem + @gutter);
+
+    li { padding-left: @gutter; }
+  }
+}

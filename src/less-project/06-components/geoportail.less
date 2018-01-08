@@ -1,0 +1,386 @@
+div.geoportail-map {
+  position: relative;
+  max-height: 450px;
+
+  &:hover,
+  &:focus {
+    cursor: default !important;
+  }
+
+  .overlay-visible {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 10000;
+    text-align: center;
+    padding-top: 10rem;
+    font-size: 2rem;
+    touch-action: pan-y;
+  }
+
+  .overlay-hidden {
+    display: none;
+  }
+
+  canvas {
+    min-height: 400px;
+  }
+
+  button {
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    z-index: 2;
+
+    &.ol-zoom-out {
+      margin-top: 5rem;
+    }
+
+    &:focus {
+      background-color: #2980b9;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  ////////////////////////////////////////
+  ////////// OPTIONS MAP /////////////////
+  ////////////////////////////////////////
+
+  .ol-zoomslider {
+    display: none;
+  }
+
+  .ol-full-screen button {
+    padding: 0.5rem;
+  }
+
+  .ol-attribution {
+    display: none;
+  }
+
+  .ol-full-screen button,
+  .ol-rotate button {
+    left: auto;
+    right: 1rem;
+    outline: none;
+  }
+
+  .ol-rotate {
+    top: 3em;
+
+    button {
+      top: 4.1rem;
+    }
+  }
+
+  ////////////////////////////////////////
+  //////////// POPUP MAP /////////////////
+  ////////////////////////////////////////
+
+  .lux-popup {
+    position: relative;
+  }
+
+  .lux-popup-close {
+    float: none;
+    left: auto;
+    bottom: auto;
+    right: 1rem;
+    top: 0.5rem;
+    visibility: hidden;
+  }
+
+  .lux-popup-content {
+    font-family: @bodyFontFamily;
+    position: relative;
+
+    .popup-title {
+      margin: 0;
+      margin-bottom: 1rem;
+      width: 90%;
+      font-size: 1.4rem;
+      font-family: @headingFontFamily;
+    }
+  }
+
+  .lux-popup-header {
+    text-align: right;
+    padding: 0;
+  }
+
+  iframe {
+    max-height: 350px;
+    width: auto;
+  }
+}
+
+/**
+* The zoomslider in the second map shall be placed between the zoom-in and
+* zoom-out buttons.
+*/
+
+div.geoportail-map.slider {
+  .ol-zoom {
+    background: #F7F5F2;
+  }
+
+  button {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    top: 0rem;
+    left: 0;
+  }
+
+  .ol-zoom .ol-zoom-out {
+    margin-top: 209px;
+  }
+
+  .ol-zoomslider {
+    background-color: transparent;
+    top: 2.7em;
+    padding: 0;
+    display: block;
+  }
+
+  .ol-touch .ol-zoomslider {
+    top: 2.75em;
+  }
+
+  .ol-zoom-in.ol-has-tooltip:hover [role=tooltip],
+  .ol-zoom-in.ol-has-tooltip:focus [role=tooltip] {
+    top: 3px;
+  }
+
+  .ol-zoom-out.ol-has-tooltip:hover [role=tooltip],
+  .ol-zoom-out.ol-has-tooltip:focus [role=tooltip] {
+    top: 232px;
+  }
+}
+
+////////////////////////////////////////
+////////// FULL SCREEN MAP /////////////
+////////////////////////////////////////
+
+div.geoportail-map:-ms-full-screen {
+  height: 100% !important;
+  width: 100% !important;
+  max-height: none !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+div.geoportail-map:-moz-full-screen {
+  height: 100% !important;
+  width: 100% !important;
+  max-height: none !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+div.geoportail-map:-webkit-full-screen {
+  height: 100% !important;
+  width: 100% !important;
+  max-height: none !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+div.geoportail-map:fullscreen {
+  height: 100% !important;
+  width: 100% !important;
+  max-height: none !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+
+////////////////////////////////////////
+///////////// ADDRESSES ////////////////
+////////////////////////////////////////
+
+div.geoportail-addresses {
+  margin: 1rem 0 3rem;
+  background: #f1f1f1;
+
+  .localize {
+    width: auto;
+    margin-left: 3rem;
+    white-space: normal;
+
+    &:active {
+      top: auto;
+    }
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    margin: 0;
+  }
+
+  li {
+    padding: 1rem;
+
+    &:before { display: none; }
+
+    & + li {
+      border-top: 1px solid #ddd;
+    }
+
+    .vcard{
+      background: #f1f1f1;
+      padding: 2rem;
+    }
+ }
+
+ .vcard-title {
+   font-weight: bold;
+   margin-bottom: 2rem;
+   min-height: 4.5rem;
+   padding-left: 3.5rem;
+   position: relative;
+
+   &:before {
+     content: url('http://cdn.public.lu/skizz/img/maps/icon.png');
+     vertical-align: middle;
+     position: absolute;
+     top: 0;
+     left: 0;
+   }
+ }
+
+ [itemprop="address"] {
+   margin-bottom: 2rem;
+   margin-left: 3.5rem;
+ }
+
+ .vcard-item {
+   margin-left: 3.5rem;
+ }
+
+ img {
+   float: left;
+   margin: 0 1rem 1rem 0;
+   vertical-align: middle;
+ }
+
+ img + .vcard-title {
+   padding-left: 0;
+   position: static;
+
+   &:before { display: none; }
+
+   & + [itemprop="address"] {
+     display: block;
+     clear: left;
+   }
+ }
+
+ .vcard-actions {
+   margin-top: 2rem;
+   margin-left: 3.5rem;
+
+   a {
+     display: inline-block;
+     margin: 0 0.5rem 1em;
+
+     &:hover,
+     &:focus {
+       color: @textColor;
+     }
+
+     span { .at; }
+   }
+ }
+}
+
+@media screen and (min-width: 37.5em) {
+  .geoportail-addresses {
+    overflow: hidden;
+    margin: 0 0rem 3rem -2rem;
+
+    li {
+      box-sizing: border-box;
+      float: left;
+      width: 50%;
+      padding: 1rem 0 1rem 2rem;
+
+      &:nth-child(2n+1) { clear: left; }
+    }
+  }
+}
+
+/*
+** While in page secondary
+*/
+.page-secondary {
+  .geoportail {
+    background: transparent;
+    border: none;
+    margin-top: 0;
+  }
+
+  .geoportail-map {
+    background: #F1F1F1;
+    border: 1px solid #ccc;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .geoportail-addresses {
+    display: none;
+    margin-top: 2rem;
+    position: static;
+    overflow: auto;
+    width: 100%;
+
+    li .vcard { background: none; }
+  }
+}
+
+
+@media (min-width: @breakpointDesk) {
+  .geoportail {
+    display: block;
+    position: relative;
+  }
+
+  div.geoportail-map {
+    display: block;
+    position: relative;
+    width: 65%;
+    margin-left: 35%;
+
+    .overlay-visible {
+      display: none;
+    }
+  }
+
+  div.geoportail-addresses {
+    width: 35%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    overflow-y: scroll;
+    font-size: .8em;
+
+    .vcard-actions [itemprop="telephone"],
+    .vcard-actions a[href*="http://www.google.com/"] { display: none; }
+
+    li {
+      display: block;
+      box-sizing: border-box;
+      vertical-align: top;
+      width: 100%;
+
+      .vcard {
+        padding: 1rem 1rem;
+      }
+    }
+  }
+}

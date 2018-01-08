@@ -1,0 +1,81 @@
+.remora {
+  align-self: baseline;
+
+  .toc[open] .toc-title:after {
+    content: '-';
+  }
+
+  .toc-title {
+    background: @color2;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
+
+    &:after {
+      content: '+';
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+    }
+
+    &:hover,
+    &:focus {
+      background: @color2Lighter;
+    }
+  }
+
+  .toc-anchors {
+    background: @color3Lightest;
+    margin-top: 0;
+
+    li {
+      padding-left: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .toc-anchor {
+    padding: 1rem;
+    padding-left: 2rem;
+    display: block;
+    transition: color ease-in-out 200ms, background ease-in-out 200ms;
+
+    &.is-active {
+      background: @color2Darker;
+      color: #fff;
+    }
+  }
+
+
+  &.is-sticky {
+    box-sizing: border-box;
+    position: fixed;
+    background: #fff;
+
+    @media (max-width: @breakpointDesk) {
+      > .filters > summary:after {
+        content: '+';
+      }
+
+      .filter {
+        display: none;
+      }
+    }
+
+    @media (min-width: @breakpointDesk) {
+      & + .page-text {
+        margin-left: 25%;
+      }
+    }
+  }
+}
+
+@media (min-width: @breakpointLap) {
+  .remora {
+    width: auto;
+    max-width: 300px;
+  }
+}

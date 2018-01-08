@@ -1,0 +1,74 @@
+.govbar {
+  .clear;
+
+  background: #fff;
+  border-bottom: 1px solid #cccaca;
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+  height: 46px;
+  width: 100%;
+  z-index: 30000;
+}
+
+.govbar-logo {
+  border: 0;
+  float: left;
+  padding: 3px 8px;
+
+  &.newwindow:after{
+    display: none;
+  }
+}
+
+.govbar-logo img {
+  border: 0;
+  display: block;
+  height: 40px;
+}
+
+.govbar-links {
+  float: right;
+  line-height: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    float: left;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  @media (max-width: 44.99em) {
+    display: none;
+  }
+}
+
+.govbar-link {
+  float: left;
+  font-weight: bold;
+  padding: 8px;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    border: 0;
+    color: #222 !important;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    background: #e6e6e6 !important;
+  }
+}
+
+.govbar-more {
+  font-weight: normal;
+}

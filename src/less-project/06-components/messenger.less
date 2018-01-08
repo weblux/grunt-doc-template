@@ -1,0 +1,101 @@
+.messenger {
+  padding: @baseline @gutter;
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.messenger--hide {
+  opacity: 0;
+}
+
+.messenger-content,
+.messenger-actions {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.messenger-actions{
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1em;
+
+  a {
+    .btn;
+  }
+}
+
+.messenger--error {
+  background: #fff9f9;
+  border-left: 2px solid #E01D1D;
+}
+
+.field .messenger {
+  margin-top: (@baseline / 2);
+}
+
+.messenger--hide {
+  opacity: 0;
+}
+
+.messenger-title,
+.messenger-content,
+.messenger-actions {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.messenger-actions{
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1em;
+
+  li {
+    display: inline-block;
+    margin-left: 0.5em;
+    text-align: center;
+    position: static;
+  }
+
+  > li::before { display: none; }
+
+  a {
+    .btn;
+    text-decoration: none;
+  }
+}
+
+.messenger--cookie {
+  background: @color1Lighter;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  padding: 4rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transition: opacity 300ms ease-in-out;
+  z-index: 10;
+}
+
+.messenger--cookie .messenger-actions--cross {
+  border: none;
+  background: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0;
+
+  &:active { top: 0.5rem; }
+
+  svg { fill: @linkBaseColor; }
+
+  &:hover,
+  &:focus {
+    background: none;
+    border: none;
+
+    svg { fill: @textColor; }
+  }
+}

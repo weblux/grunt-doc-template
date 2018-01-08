@@ -1,0 +1,35 @@
+// Encapsulate to protect the standard theme
+#page-main .sandbox-example {
+  /*
+   * Global settings and basic styles (esp. for features phones)
+   */
+  @import (reference) '00-settings/general';
+  @import '01-mixins/_index';
+  @import (reference) '02-themes/default';
+  @import '03-core/_index';
+
+  /**
+   * Palm/Standing devices settings and styles
+   */
+  @media (min-width: @breakpointPalm) {
+    @import '00-settings/webfonts';
+    @import '04-layouts/grid/palm';
+  }
+
+  /**
+   * Lap/Standing devices settings and styles
+   */
+  @media (min-width: @breakpointLap) {
+    @import '04-layouts/grid/lap';
+  }
+
+  /**
+   * Desk/Sitting devices settings and styles
+   */
+  @media (min-width: @breakpointDesk) {
+    @import '04-layouts/grid/desk';
+  }
+
+  @import '06-components/_index';
+  @import '07-externals/datepicker.less';
+}

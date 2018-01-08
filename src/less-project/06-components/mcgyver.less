@@ -1,0 +1,120 @@
+.mcgyver{
+  .clear;
+  margin: 1em 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.mcgyver-slot {
+  display: block;
+  float: left;
+  padding: 0 1rem;
+  margin: 0;
+  list-style-type: none;
+
+  &:before { display: none; }
+
+  & + & {
+    border-left: 1px dotted #eee;
+  }
+
+  .btn--mcgyver {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0;
+    color: @textColor;
+    padding: 0.25em 0.75em;
+    position: relative;
+
+    &,
+    &:hover,
+    &:focus {
+      background: none;
+    }
+
+    &:focus,
+    &:hover {
+      border: none;
+      color: #b8001d;
+    }
+  }
+}
+
+.btn--mcgyver svg {
+  vertical-align: middle;
+}
+
+.informative-text {
+  .at;
+}
+
+@media (min-width: @breakpointDesk) {
+  .mcgyver{
+    margin: 0;
+    position: fixed;
+    right: 0;
+    top: 32rem;
+    z-index: 2;
+  }
+
+  .mcgyver-slot {
+    float: none;
+    padding: 0 0 0.5rem;
+
+    & + .mcgyver-slot { border: none; }
+
+    .btn--mcgyver{
+      background: @color1;
+      color: contrast(@color1, @textColor, #fff);
+      font-size: 2rem;
+      padding: 1.2rem 1.5rem;
+      width: 5.4rem;
+
+      &:hover,
+      &:focus{
+        color: @textColor;
+        background: #f0f0f1;
+      }
+    }
+  }
+
+  .btn--mcgyver:hover > span,
+  .btn--mcgyver:focus > span {
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: visible;
+
+    background: #333;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    padding: 1rem;
+    right: 100%;
+
+    &:before {
+      content: "";
+      display: block;
+
+      border-left: 6px solid #333;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+
+      position: absolute;
+      bottom: 50%;
+      margin-bottom: -6px;
+      right: -6px;
+    }
+
+    .informative-text {
+      display: block;
+      .notat;
+      font-style: italic;
+      font-size: 0.8em;
+    }
+  }
+}

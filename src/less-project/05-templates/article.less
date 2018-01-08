@@ -1,0 +1,63 @@
+.article-image {
+  color: #686868;
+  display: block;
+  font-size: .75em;
+  line-height: @line-height / .75;
+  margin: 0 0 @baseline;
+}
+
+.article-head {
+  margin: 0 0 (@baseline / 2);
+}
+
+.article-subhead {
+  color: #686868;
+  font: 900 .75em @headingFontFamily;
+  letter-spacing: .1em;
+  line-height: 1;
+  text-transform: uppercase;
+
+  .page-title & {
+    margin: 0 0 @baseline;
+  }
+}
+
+.article-title {
+  margin: 0;
+}
+
+.article-metas {
+  .list--inline;
+  color: @neutral1;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 0 0 0.7rem;
+  padding: 0;
+
+  li {
+
+    &:first-child {
+      padding: 0;
+    }
+    
+    &:before {
+      display: none;
+    }
+
+    & + li {
+      position: relative;
+
+      &:before {
+        display: initial;
+        content: '.';
+        position: absolute;
+        left: 0.3rem;
+        top: -0.4rem;
+      }
+    }
+  }
+}
+
+.page--actualites .article {
+  margin: 0 0 @baseline;
+}

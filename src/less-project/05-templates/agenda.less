@@ -1,0 +1,495 @@
+//
+// @TODO: a complete refactor. Theses styles are probably no-longer usefull.
+//
+
+.page-agenda {
+  #exaleadSearchField {
+    padding: 0.5em 1em;
+  }
+
+  .results {
+    color: #58595b;
+  }
+
+  .event_date {
+    font-weight: bold;
+  }
+
+  .custom {
+    background: #f4f7fc;
+    margin: 0;
+
+    &.validation {
+      text-align: right;
+    }
+
+    label,
+    legend {
+      color: #333;
+      display: block;
+      font-size: 0.85em;
+      font-weight: bold;
+      margin-bottom: 5px;
+      margin-top: 0px;
+    }
+
+    legend {
+      margin: 0px;
+    }
+  }
+
+  .filter,
+  .filterContainer,
+  .rightColBg,
+  .boxTitle,
+  .none,
+  .clear {
+    display: none;
+  }
+
+  #all .button.exalead {
+    color: #146714;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus{
+      color: #146714;
+      text-decoration: none;
+    }
+  }
+
+  #all,
+  #agenda_eventdateexact {
+    .contentA {
+      margin-bottom: 20px;
+    }
+  }
+
+  #date_eventdate .date_selector {
+    background: #f4f7fc;
+    box-shadow: 0 0 12px #98c7e2;
+    moz-box-shadow: 0 0 12px #98c7e2;
+  }
+
+  .results-infos {
+    font-style: normal;
+    margin: 0 0 30px;
+    overflow: hidden;
+
+    .results-infos-number {
+      float: left;
+      color: #065c8f;
+      margin-bottom: 0px;
+    }
+
+    .results-infos-show-pp {
+      margin-bottom: 0px;
+      float: right;
+    }
+
+    select {
+      margin-left: 10px;
+    }
+  }
+
+  .jdpicker_w {
+    color: #274052;
+    position: relative;
+
+    .error_msg {
+         display:none;
+         text-align:center;
+         font-size:0.8em;
+         color:#666
+    }
+  }
+
+  .date_selector {
+    background: transparent;
+    padding: 0px;
+    margin: 0;
+    position: absolute;
+    z-index: 100000;
+    display: none;
+    width: 100%;
+    right: 0px !important;
+    left: auto !important;
+    top: 100% !important;
+
+    * {
+      width: auto;
+      height: auto;
+      border: none;
+      background: none;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    table {
+      border-spacing: 1px;
+      clear: both;
+      width: 100%;
+      margin:0 auto;
+    }
+
+    thead {
+      background: white;
+      color: #274052;
+      th {
+        color: #274052;
+      }
+    }
+
+    tbody {
+      background: white;
+    }
+
+    th {
+      padding-top:5px
+    }
+
+    th,
+    td {
+      color: black;
+      text-align: center;
+    }
+
+    td {
+      background: white;
+      border: 0px;
+      color: #274052;
+      line-height: 2em;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .today {
+      background: #EBE5F9;
+      border:2px solid #806BBA;
+    }
+
+    td a {
+      display: block;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    .week_label {
+      font-size:80%;
+      font-style:italic;
+      font-weight:normal;
+      width:25px
+    }
+
+    .week_num {
+      background:#FCFCFC !important;
+      border:none !important;
+      color:#274052 !important;
+      font-size:70%;
+      font-style:italic;
+      padding-right:4px;
+      text-align:right;
+      vertical-align:bottom !important;
+    }
+
+    .unselected_month {
+      color: #ccc;
+    }
+
+    .selectable_day,
+    .selectable_week td {
+      border: 0px;
+      color:#274052;
+      cursor: pointer;
+      font-weight:bold;
+
+      &.hover {
+        background: #2e7de2;
+        border-radius: 99999px;
+        color: white;
+      }
+    }
+
+    .selected,
+    .selected td {
+      background: #065c8f;
+      border-radius: 99999px;
+      border: 0px;
+      color: white;
+    }
+
+    .button {
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      line-height: 17px;
+      font-weight: bold;
+      color: #065c8f;
+      text-align: center;
+      font-size: 110%;
+      overflow: hidden;
+      border: 1px solid transparent;
+      cursor:pointer;
+      background:transparent;
+
+      &:hover,
+      &#resultsContainerover {
+        background: none;
+        color: #274052;
+        cursor: pointer;
+        border:1px solid transparent;
+      }
+    }
+
+    .nav {
+         width: 100%;
+    }
+
+    .month_nav,
+    .year_nav {
+         margin: 0 0 3px 0;
+         padding: 0;
+         display: block;
+         position: relative;
+         text-align: center;
+         width: 48%;
+    }
+
+    .month_nav {
+         float: left;
+    }
+
+    .year_nav {
+         float: right;
+         position:relative;
+    }
+
+    .month_nav select {
+      width:75px;
+      margin: 0 auto;
+      border:1px solid #ccc;
+      position:relative;
+      top:1px
+    }
+
+    .year_input {
+         text-align:center;
+         width:36px;
+         border:1px solid #ccc;
+         position:relative;
+         top:2px;
+    }
+
+    .month_name,
+    .year_name {
+         font-weight: bold;
+         line-height: 20px;
+    }
+
+    .prev {
+         left: 0;
+    }
+
+    .next {
+         right: 0;
+    }
+  }
+
+  .date_clearer {
+       color: #a00;
+       padding-left:3px;
+       cursor:pointer;
+       font-weight:bold;
+       font-family:sans-serif;
+      display: none;
+  }
+
+  .date_selector_ieframe {
+       position: absolute;
+       z-index: 99999;
+       display: none;
+  }
+
+
+  #exalead {
+    padding-top: 2em;
+
+    .results em {
+      color: #053146 ! important;
+      background: none repeat scroll 0px 0px #FDB813 ! important;
+      font-style: normal;
+      padding: 2px 4px;
+    }
+
+    a em {
+      text-decoration: underline;
+    }
+
+    a:hover em,
+    a:focus em {
+         text-decoration: underline;
+    }
+  }
+
+  .linklist {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+    li {
+      position: relative;
+    }
+
+    a {
+      display: block;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: .8em;
+      margin: 10px 0px;
+    }
+  }
+
+  .hit {
+    margin: 0 0 40px;
+  }
+
+  #resultsContainer .rightCol .contentB {
+    padding: 10px;
+  }
+
+  #resultsContainer .rightCol .header h2 {
+    color: #00597B;
+    font-size: 1.5em;
+    font-weight: normal;
+    line-height: 1.5em;
+    margin: 0px;
+    text-transform: none;
+  }
+
+
+  #exalead fieldset {
+    &:extend(.form fieldset);
+    margin-top: 0;
+  }
+
+  #resultsContainer .rightCol .custom fieldset .label {
+       font-size: 1em;
+       font-weight: normal;
+       margin-bottom: 0px;
+       padding-top: 6px;
+
+       &:first-child { padding-top: 0px; }
+  }
+
+  #resultsContainer .rightCol .custom fieldset .formw {
+    padding-top: 4px;
+  }
+
+  .dateRange {
+    width: 100%;
+  }
+
+  #resultsContainer .rightCol .custom button.exalead {
+    font-size: 1em;
+  }
+
+  #exalead .seachFieldBox .field {
+       display: inline;
+  }
+
+  #exalead .boxContent, #exalead .boxContent div {
+       display: inline;
+  }
+
+  #exalead .seachFieldBox .error {
+       background: none repeat scroll 0% 0% transparent;
+       font-size: 0.9em;
+       font-weight: bold;
+       padding: 0px;
+  }
+
+  #exalead .seachFieldBox .error .searchField {
+       border: 2px solid #B90000;
+       margin-bottom: 10px;
+  }
+
+  #exalead .seachFieldBox .error strong {
+       display: block;
+  }
+
+  .seachFieldBox .searchField {
+       color: #393939;
+       overflow: hidden;
+       padding: 0px;
+  }
+
+  .seachFieldBox button {
+    &:extend(.btn all);
+    &:extend(.btn--primary all);
+    margin-left: 20px;
+  }
+
+  .count {
+       color: #4D4D4D;
+       font-size: 10px;
+       position: absolute;
+       right: 4px;
+       top: 5px;
+  }
+
+  .seachFieldBox {
+    background: #f4f7fc;
+    margin: 0px 0px 32px;
+    padding: 12px;
+  }
+
+  .seachFieldBox input[type="text"] {
+    background: #fff;
+    max-width: 450px;
+    width: 100%;
+  }
+
+  .button span, .button strong {
+       font-size: inherit;
+  }
+}
+
+@media (min-width: @breakpointLap) {
+  .page-agenda {
+    #resultsContainer {
+      padding-right: 285px;
+
+      .contents {
+        box-sizing: border-box;
+        float: left;
+        padding: 10px;
+        width: 100%;
+      }
+
+      .rightCol {
+        float: right;
+        font-size: 1em;
+        margin-right: -285px;
+        position: relative;
+        width: 275px;
+      }
+    }
+
+    #filtersearchForm button {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: @breakpointDesk) {
+  .page-agenda #resultsContainer .contents {
+    width: 90%;
+  }
+}

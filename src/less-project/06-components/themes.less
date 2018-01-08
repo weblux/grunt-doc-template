@@ -1,0 +1,60 @@
+.themes-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+    margin: 0 0 @baseline;
+    padding: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.theme {
+  background: @neutral3;
+  color: @textColor;
+  display: block;
+  border-left: 5px solid @neutral1;
+  padding: @baseline @gutter;
+  text-decoration: none;
+
+  &:visited {
+    color: @textColor;
+  }
+
+  &:hover,
+  &:focus {
+    background: @neutral2;
+    border-left-color: @color2;
+    text-decoration: none;
+
+    .theme-title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.theme-title {
+  font-size: 1.8rem;
+  margin: 0 0 1rem;
+}
+
+.theme-more,
+.theme-description {
+  font-size: 1.4rem;
+}
+
+.theme-more {
+  display: block;
+  margin: 0;
+}
+
+@media (min-width: @breakpointLap) {
+  .themes h2 {
+    margin-top: 0;
+  }
+}

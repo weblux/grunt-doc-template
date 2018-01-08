@@ -58,6 +58,16 @@ module.exports = function (grunt) {
         },
         src: 'src/less/main.less',
         dest: 'dist/assets/css/main.css'
+      },
+
+      project: {
+        options: {
+          sourceMapURL: 'project.css.map',
+          sourceMapFilename: 'dist/assets/css/project.css.map',
+          sourceMapRootpath: '../../../'
+        },
+        src: 'src/less-project/project.less',
+        dest: 'dist/assets/css/project.css'
       }
     },
 

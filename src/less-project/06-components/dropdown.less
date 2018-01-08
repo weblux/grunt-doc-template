@@ -1,0 +1,75 @@
+.dropdown {
+  position: relative;
+  transform: translateZ(0);
+  will-change: transform;
+  z-index: 1;
+
+  .js & {
+    > .menu {
+      box-shadow: 0 8px 15px -4px rgba(0,0,0,.15);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none;
+    }
+
+    &.is-open > .menu {
+      display: block;
+    }
+  }
+
+  li {
+    padding-left: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.js .dropdown--right .menu {
+  left: auto;
+  right: 0;
+}
+
+.menu {
+  background: #fff;
+  border: 1px solid @neutral2;
+  color: @textColor;
+  list-style: none;
+  margin: 0;
+  min-width: 10em;
+
+  a,
+  button {
+    background: none;
+    border: none;
+    border-radius: 0;
+    display: block;
+    margin: 0;
+    padding: (@gutter / 2) @gutter;
+
+    &,
+    &:visited {
+      color: inherit;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: @neutral3;
+      text-decoration: none;
+    }
+  }
+
+  .btngroup & {
+    display: none;
+    min-width: 80%;
+    position: absolute;
+    top: 100%;
+    z-index: 10000;
+  }
+
+  .btngroup.is-open & {
+    display: block;
+  }
+}

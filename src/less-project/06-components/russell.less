@@ -1,0 +1,21 @@
+.russell {
+  transition: transform 0.2s;
+
+  &.is-hidden {
+    transform: translate(0px, -100%);
+  }
+
+  &.is-visible {
+    transform: translate(0, 0);
+  }
+
+  &.is-detached {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 32000;
+    width: 100%; // for IE center
+    margin: 0 auto; // for IE center
+  }
+}
